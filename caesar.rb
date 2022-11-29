@@ -40,33 +40,33 @@ def character_check(character, key)
 end
 
 #function that runs the cipher for lower case letters
-def downcase_cipher(down-character, key)
+def downcase_cipher(down_character, key)
   key.times do
-    down-character+=1
+    down_character+=1
 
     #wrap around
-    if down-character == 123
-      down-character = 97
+    if down_character == 123
+      down_character = 97
     end
   end
 
   #needs return because things are ran multiple times in this function
-  return down-character
+  return down_character
 end
 
 #function that runs the cipher for upper case letters
-def upcase_cipher(up-character, key)
+def upcase_cipher(up_character, key)
   key.times do
-    up-character+=1
+    up_character+=1
 
     #wrap around
-    if up-character == 91
-      up-character = 65
+    if up_character == 91
+      up_character = 65
     end
   end
 
   #needs return because multiple times are ran
-  return up-character
+  return up_character
 end
 
 #deciphers the message and brings it back into string
@@ -80,10 +80,16 @@ def decipher(phrase)
   return message.join
 end
 
+#message input from user
+print "Message: "
+secret = gets.chomp
 
-puts caesar_cipher("This is a test", 17)
+#key input from user
+print "Key: "
+code = gets.chomp.to_i
 
-
+#outputs results
+puts "Secret: #{caesar_cipher(secret, code)}"
 
 
 #The PLAN
